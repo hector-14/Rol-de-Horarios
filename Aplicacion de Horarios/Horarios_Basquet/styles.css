@@ -227,7 +227,7 @@ td a{
 }
 
 .cartel-jornada {
-    background: url('../imagenes/descarga.jfif');
+    background: url('https://es.pinterest.com/pin/34480753393193392/');
     background-size: contain;
     margin-bottom: 15px;
     padding: 20px;
@@ -270,5 +270,6 @@ td a{
     padding: 5px 0px;
     margin: 10px 0px;
 }
+
 
 
