@@ -1,0 +1,272 @@
+body {
+    font-family: Arial, sans-serif;
+    /*background: #1f1f1f;*/
+    color: #fAfAfA;
+    padding: 0px;
+    margin: 0px;
+    background: #070707;
+}
+
+h1, h2{
+    color: #fafafa;
+    padding: 10px;
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+    margin: 15px 0px;
+    color: #fafafa;
+}
+
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.contenedor{
+    height: 100%;
+}
+
+.formulario input {
+    display: block;
+    color: white;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 300px;
+    outline: none;
+    border: 1.5px solid #cdbdae;
+    border-radius: 20px;
+    background-color: #1f1f1f;
+    text-align: center;
+    
+}
+
+.formulario input:focus{
+    color: white;
+}
+
+textarea {
+    display: block;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 300px;
+    height: auto;
+    min-height: 150px;
+    resize: none;
+    background-color: #1f1f1f;
+    outline: none;
+    border: 1.5px solid #cdbdae;
+    border-radius: 15px;
+    color: #fafafa;
+    text-align: center;
+} 
+
+.boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+button.btn1{
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 150px;
+    border-radius: 20px;
+    font-size: 14px;
+    border: none;
+    /* border-color: #ffffff; */
+    box-shadow: 0px 0px 0px 3px #cdbdae;
+    background-color: #7b7064;
+    color: #fafafa;
+    cursor: pointer;
+}
+
+button.btn1:hover {
+    /*border-color: #ff8400;*/
+    box-shadow: 0px 2px 2px 1px rgb(18 18 18 / 20%);
+    background-color: #cdbdae;
+    color: #1f1f1f;
+}
+
+.horarios{
+    background-color: #cdbdae;
+    padding: 30px 40px;
+}
+
+.horarios .contorno{
+    border: 2px solid #fafafa;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#botonesJornadas{
+    display: flex;
+    background-color: #cdbdae;
+}
+
+#botonesJornadas button{
+    width: auto;
+    min-width: 130px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    border: none;
+    box-shadow: 0px 0px 0px 3px #7b7064;
+    background-color: #cdbdae;
+    color: #1f1f1f;
+    cursor: pointer;
+}
+
+#botonesJornadas button:hover{
+    background-color: #7b7064;
+    box-shadow: 0px 0px 0px 3px #7b7064;
+    color: #fafafa
+
+}
+
+.horarios .contorno h2{
+    color: #1f1f1f;
+    padding-top: 30px;
+    border-top: 2px solid #fafafa;
+}
+
+.horarios .contorno #tablaJornada{
+    padding: 0px 40px;   
+}
+
+.horarios .contorno #tablaJornada h3{
+    text-align: center;
+    margin: 15px 0px;
+    color: #1f1f1f;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+th {
+    border: 1.5px solid #fafafa;
+    padding: 8px;
+    text-align: center;
+    color: #1f1f1f;
+}
+
+td{
+    border: 1.5px solid #fafafa;
+    text-align: center;
+    padding: 10px;
+    /* width: 150px; */
+    height: 70px;
+    max-width: 150px;
+    /*color: #fafafa;*/
+    
+}
+
+td input{
+    width: 150px;
+    height: 25px;
+    background: #cdbdae;
+    color: #1f1f1f;
+    outline-color: #afa295;
+    border-radius: 5px;
+    text-align: center;
+    border: 1.5px solid #7a5b3e;
+}
+
+td a{
+    display: flex;
+    /* margin: 10px 80px; */
+    padding: auto;
+    cursor: pointer;
+    /* width: 40px; */
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+#tablaJornada .boton .btn2{
+    width: 150px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    border: none;
+    box-shadow: 0px 0px 0px 3px #7b7064;
+    background-color: #cdbdae;
+    color: #1f1f1f;
+    cursor: pointer;
+}
+
+#tablaJornada .boton .btn2:hover{
+    background-color: #7b7064;
+    box-shadow: 0px 0px 0px 3px #7b7064;
+    color: #fafafa
+
+}
+
+.jornada {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #1e1e1e;
+}
+
+#cartel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #1f1f1f1f;
+    
+}
+
+.cartel-jornada {
+    background: url("../imagenes/descarga.jfif");
+    background-size: contain;
+    margin-bottom: 15px;
+    padding: 20px;
+    border: 1.5px solid #cdbdae;
+    text-align: start;
+    height: auto;
+    box-shadow: 4px 4px 4px #cdbdae;
+    min-width: 250px;
+    min-height: 350px;
+}
+
+.fondo-Cartel{
+    background-color: rgb(34 34 34 / 55%);
+    padding: 25px 15px;
+    min-height: 300px;
+}
+
+.cartel-jornada .fondo-Cartel h2{
+    margin: 0px;
+    text-align: center;
+    color: #fff000;
+}
+
+.cartel-jornada .fondo-Cartel h3{
+    color: #fafafa;
+    margin: 0px;
+    padding: 10px;
+    text-align: center;
+}
+
+.cartel-jornada .fondo-Cartel .parrafos{
+    width: 100%;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.cartel-jornada .fondo-Cartel .parrafos p{
+    color: #fafafa;
+    /*color: #1f1f1f;*/
+    padding: 5px 0px;
+    margin: 10px 0px;
+}

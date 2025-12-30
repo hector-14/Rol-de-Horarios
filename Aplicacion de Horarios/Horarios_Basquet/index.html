@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de Rol de Juegos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Generador de Horarios para partidos</h1>
+
+<div class="formulario">
+    <div class="contenedor">
+        <h3>Ingresa el nombre del torneo</h3>
+        <input type="text" id="torneo" placeholder="Nombre del torneo">
+        <h3>Ingresa los nombres de los equipos</h3>
+        <textarea id="equipos" placeholder="Equipos (uno por línea)"></textarea>
+        <h3>Ingresa la hora de inicio</h3>
+        <input type="time" id="horaInicio" value="08:00" min="07:00" max="22:00" step="7200">
+        <div class="boton">
+            <button class="btn1" onclick="generarRol()">Generar Rol</button>
+        </div>
+    </div>
+</div>
+
+<div class="horarios">
+    <div class="contorno">
+        <div id="botonesJornadas"></div>
+
+        <h2>Tabla de Juegos</h2>
+        
+        <div id="tablaJornada"></div>
+    </div>
+</div>
+
+
+<h2>Cartel de Horarios</h2>
+<div id="cartel"></div>
+
+<div class="boton">
+    <button class="btn1" onclick="descargarPNG()">Descargar PNG</button>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
