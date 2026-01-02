@@ -1,17 +1,38 @@
 body {
     font-family: Arial, sans-serif;
     /*background: #1f1f1f;*/
-    color: #fAfAfA;
+    color: #fafafa;
     padding: 0px;
     margin: 0px;
     background: #070707;
+    /*background-image: url("../imagenes/Logo1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;*/
 }
 
-h1, h2{
+#principal{
+    /*background-color: rgb(34 34 34 / 70%);*/
+    background-image: url("../imagenes/Logo1-split.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#fondo{
+    background-color: rgb(34 34 34 / 70%);
+}
+
+h1{
+    color: #fafafa;
+    padding: 40px 0px 20px 0px;
+    text-align: center;
+    margin: 0px;
+}
+
+/*h1, h2{
     color: #fafafa;
     padding: 10px;
     text-align: center;
-}
+}*/
 
 h3{
     text-align: center;
@@ -46,6 +67,19 @@ h3{
 
 .formulario input:focus{
     color: white;
+}
+
+.formulario #tipoTorneo,
+.formulario #numJornadas{
+    width: 322px;
+    padding: 10px;
+    border: 1.5px solid #cdbdae;
+    border-radius: 20px;
+    background: #1f1f1f;
+    color: white;
+    text-align: center;
+    outline: none;
+    /*margin-bottom: 10px;*/   
 }
 
 textarea {
@@ -218,16 +252,48 @@ td a{
     background: #1e1e1e;
 }
 
-#cartel {
+#cartel{
+    background-image: url("../imagenes/Logo1-split2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#parteTres{
+    background-color: rgb(34 34 34 / 70%);
+}
+
+#cartel h2{
+    color: #fafafa;
+    padding: 10px;
+    text-align: center;
+}
+
+#cartelCentrado{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#imagen input{
+    text-align: center;
+    border-radius: 20px;
+    width: 200px;
+    outline: none;
+    border: 1.5px solid #cdbdae;
+    background: #1f1f1f;
+    padding: 10px;
+}
+
+#contenidoCartel {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #1f1f1f1f;
+    /*border: 1px solid #1f1f1f1f;*/
     
 }
 
 .cartel-jornada {
-    background: url("https://es.pinterest.com/pin/34480753393193392/");
+    background: url('../imagenes/descarga.jfif');
     background-size: contain;
     margin-bottom: 15px;
     padding: 20px;
@@ -270,7 +336,3 @@ td a{
     padding: 5px 0px;
     margin: 10px 0px;
 }
-
-
-
-
