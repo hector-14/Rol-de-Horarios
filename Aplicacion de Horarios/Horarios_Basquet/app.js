@@ -2,6 +2,32 @@ let jornadas = [];
 let jornadaActual = 0;
 let horaBase = "";
 let tituloTorneo = "";
+let fondoCartel = "";
+
+/*------------------------------ Tipo de Torneo -----------------------------------*/
+
+function cambiarTipoTorneo() {
+    const tipo = document.getElementById("tipoTorneo").value;
+    document.getElementById("configRelampago").style.display =
+        tipo === "relampago" ? "block" : "none";
+}
+
+/*--------------------- Generar todos los enfrentamientos -----------------------------------*/
+
+/*function generarTodosLosPartidos(equipos) {
+    let partidos = [];
+
+    for (let i = 0; i < equipos.length; i++) {
+        for (let j = i + 1; j < equipos.length; j++) {
+            partidos.push({
+                hora: "",
+                a: equipos[i],
+                b: equipos[j]
+            });
+        }
+    }
+    return partidos;
+}*/
 
 function generarRol() {
     const equipos = document.getElementById("equipos").value
@@ -18,14 +44,64 @@ function generarRol() {
         return;
     }
 
-    jornadas = roundRobin(equipos);
-    asignarHorarios();
+    const tipo = document.getElementById("tipoTorneo").value;
+
+    if (tipo === "relampago") {
+        const num = parseInt(document.getElementById("numJornadas").value);
+        jornadas = generarRelampagoUnaVez(equipos, num);
+        asignarHorarios();
+    } else {
+        jornadas = roundRobin(equipos);
+        asignarHorarios();
+    }
+
+    /*jornadas = roundRobin(equipos);
+    asignarHorarios();*/
 
     jornadaActual = 0;
     renderBotones();
     renderJornada();
     renderCartel();
+
+    document.getElementById("zonaHorarios").style.display = "block";
+    document.getElementById("cartel").style.display = "block";
 }
+
+/*--------------------- Actualizacion De Toneo Relampago -----------------------------------*/
+
+function generarRelampagoUnaVez(equipos, numJornadas) {
+    let lista = [...equipos];
+
+    // Si es impar, uno descansa (opcional)
+    if (lista.length % 2 !== 0) {
+        lista.push("DESCANSA");
+    }
+
+    // Mezclar equipos
+    lista.sort(() => Math.random() - 0.5);
+
+    // Crear partidos (cada equipo una vez)
+    let partidos = [];
+    for (let i = 0; i < lista.length; i += 2) {
+        partidos.push({
+            hora: "",
+            a: lista[i],
+            b: lista[i + 1]
+        });
+    }
+
+    // Crear jornadas vacías
+    let jornadas = Array.from({ length: numJornadas }, () => []);
+
+    // Repartir partidos equitativamente
+    partidos.forEach((p, i) => {
+        jornadas[i % numJornadas].push(p);
+    });
+
+    return jornadas;
+}
+
+/*--------------------- Todos Contra todos  -----------------------------------*/
 
 function roundRobin(equipos) {
     let lista = [...equipos];
@@ -157,11 +233,24 @@ function sumarHora(hora, horas) {
 }
 
 
+function cambiarFondo(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = e => {
+        fondoCartel = e.target.result;
+        renderCartel();
+    };
+    reader.readAsDataURL(file);
+}
+
+
 function renderCartel() {
-    const cartel = document.getElementById("cartel");
+    const cartel = document.getElementById("contenidoCartel");
     const jornada = jornadas[jornadaActual];
 
-    let html = `<div id="lienzo"  class="cartel-jornada">
+    let html = `<div id="lienzo"  class="cartel-jornada" style="background-image: url('${fondoCartel}'); background-size:cover; background-position:center;">
         <div class="fondo-Cartel">
             <h2 class="titulo-torneo" style="color: #ffff00;">${tituloTorneo}</h2>
             <h3>Jornada ${jornadaActual + 1}</h3>
@@ -215,5 +304,7 @@ function descargarPNG() {
         link.click();
     });
 }
+
+
 
 
