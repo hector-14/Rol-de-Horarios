@@ -3,27 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Generador de Rol de Juegos</title>
+    <link rel="icon" href="../iconos/Logo2.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<h1>Generador de Horarios para partidos</h1>
+    <div id="principal">
+        <div id="fondo">
+            <h1>Generador de Horarios para partidos</h1>
+            <div class="formulario">
+                <div class="contenedor">
+                    <h3>Ingresa el nombre del torneo</h3>
+                    <input type="text" id="torneo" placeholder="Nombre del torneo">
 
-<div class="formulario">
-    <div class="contenedor">
-        <h3>Ingresa el nombre del torneo</h3>
-        <input type="text" id="torneo" placeholder="Nombre del torneo">
-        <h3>Ingresa los nombres de los equipos</h3>
-        <textarea id="equipos" placeholder="Equipos (uno por línea)"></textarea>
-        <h3>Ingresa la hora de inicio</h3>
-        <input type="time" id="horaInicio" value="08:00" min="07:00" max="22:00" step="7200">
-        <div class="boton">
-            <button class="btn1" onclick="generarRol()">Generar Rol</button>
+                    <h3>Tipo de torneo</h3>
+                    <select id="tipoTorneo" onchange="cambiarTipoTorneo()">
+                        <option value="largo">Torneo largo (todos contra todos)</option>
+                        <option value="relampago">Torneo relámpago</option>
+                    </select>
+                
+                    <div id="configRelampago" style="display:none">
+                        <h3>Número de jornadas</h3>
+                        <select id="numJornadas">
+                            <option value="1">1 jornada</option>
+                            <option value="2">2 jornadas</option>
+                            <option value="3">3 jornadas</option>
+                            <option value="4">4 jornadas</option>
+                        </select>
+                    </div>
+
+                    <h3>Ingresa los nombres de los equipos</h3>
+                    <textarea id="equipos" placeholder="Equipos (uno por línea)"></textarea>
+                    <h3>Ingresa la hora de inicio</h3>
+                    <input type="time" id="horaInicio" value="08:00" min="07:00" max="22:00" step="3600">
+                    <div class="boton">
+                        <button class="btn1" onclick="generarRol()">Generar Rol</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="horarios">
+
+<div class="horarios" id="zonaHorarios" style="display: none;">
     <div class="contorno">
         <div id="botonesJornadas"></div>
 
@@ -33,13 +55,28 @@
     </div>
 </div>
 
+<div id="cartel" style="display: none;">
+    <div id="parteTres">
+        <h2>Cartel de Horarios</h2>
 
-<h2>Cartel de Horarios</h2>
-<div id="cartel"></div>
+        <div id="cartelCentrado">
+            <div id="imagen">
+                <h3>Fondo del cartel</h3>
+                <input type="file" id="fondoCartel" accept="image/*" onchange="cambiarFondo(event)">
+            </div>
 
-<div class="boton">
-    <button class="btn1" onclick="descargarPNG()">Descargar PNG</button>
+            <div id="contenidoCartel">
+
+            </div>
+        </div>
+
+        <div class="boton">
+            <button class="btn1" onclick="descargarPNG()">Descargar PNG</button>
+        </div>
+    </div>
 </div>
+
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
